@@ -1,0 +1,10 @@
+{
+  "name": "express-dockerfile-example",
+  "version": "1.0.0",
+  "description": "Single and multi-stage Dockerfiles",
+  "dependencies": {
+    "express": "4.16.3"
+  },
+  "author": "Bryant Hagadorn",
+  "license": "ISC"
+}

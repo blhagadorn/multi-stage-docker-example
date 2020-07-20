@@ -1,0 +1,12 @@
+FROM node:12 AS stage1
+ADD . /app
+WORKDIR /app
+RUN npm install
+
+
+#Second Stage
+FROM gcr.io/distroless/nodejs
+COPY --from=stage1 /app /app
+WORKDIR /app
+EXPOSE 8080
+CMD ["server.js"]
