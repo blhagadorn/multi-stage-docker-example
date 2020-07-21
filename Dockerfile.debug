@@ -1,9 +1,10 @@
-// Node Sample Dockerfile - Multi-stage with Shell for Debugging
 FROM node:12 AS stage1
 ADD . /app
 WORKDIR /app
 RUN npm install
-#Second Stage us
+
+# Second Stage using debug image for shell access
+
 FROM gcr.io/distroless/nodejs:debug
 COPY --from=stage1 /app /app
 WORKDIR /app
